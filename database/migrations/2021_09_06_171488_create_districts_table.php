@@ -22,8 +22,8 @@ class CreateDistrictsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('bn_name')->nullable();
-            $table->string('lat')->nullable();
-            $table->string('lon')->nullable();
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
             $table->string('url')->nullable();
             $table->boolean('status')->default(1)->index()->comment('1 = active, 0 = inactive');
             $table->foreignId('division_id')->constrained('divisions')->onDelete('cascade');

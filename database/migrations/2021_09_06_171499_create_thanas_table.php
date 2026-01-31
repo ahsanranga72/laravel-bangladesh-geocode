@@ -22,6 +22,8 @@ class CreateThanasTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('bn_name')->nullable();
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
             $table->string('url')->nullable();
             $table->boolean('status')->default(1)->index()->comment('1 = active, 0 = inactive');
             $table->foreignId('district_id')->constrained('districts')->onDelete('cascade');
